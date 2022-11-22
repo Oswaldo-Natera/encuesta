@@ -2,6 +2,8 @@
 session_start();
 error_reporting(0);
 $sesion = $_SESSION["usuario"];
+$_SESSION["resp4"] = $_POST["preg4"]; 
+
 
 if ($sesion == NULL || $sesion == "") {
     echo "Usted no tiene autorización";
@@ -27,7 +29,7 @@ if ($sesion == NULL || $sesion == "") {
         <label for="preg5">5. ¿Se puede ser optimista sobre la situación futura de la economía de Medellín?</label>
         <br>
         <br>
-        <select name="preg5" id="preg5">
+        <select name="preg5" id="preg5" default="Muy bueno">
             <option value="MB">Muy bueno</option>
             <option value="B">Bueno</option>
             <option value="R">Regular</option>

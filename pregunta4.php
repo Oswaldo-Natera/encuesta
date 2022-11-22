@@ -2,6 +2,7 @@
 session_start();
 error_reporting(0);
 $sesion = $_SESSION["usuario"];
+$_SESSION["resp3"] = $_POST["preg3"]; 
 
 if ($sesion == NULL || $sesion == "") {
     echo "Usted no tiene autorización";
@@ -27,7 +28,7 @@ if ($sesion == NULL || $sesion == "") {
         <label for="preg4">4. ¿Qué tan de acuerdo está Usted con que en su ciudad es fácil encontrar trabajo?</label>
         <br>
         <br>
-        <select name="preg4" id="preg4">
+        <select name="preg4" id="preg4" default="Muy bueno">
             <option value="MB">Muy bueno</option>
             <option value="B">Bueno</option>
             <option value="R">Regular</option>

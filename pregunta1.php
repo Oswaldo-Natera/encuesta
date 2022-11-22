@@ -28,7 +28,7 @@ if ($sesion == NULL || $sesion == "") {
         <br>
         <br>
         <br>
-        <select name="preg1" id="preg1">
+        <select name="preg1" id="preg1" default="Muy bueno">
             <option value="MB">Muy bueno</option>
             <option value="B">Bueno</option>
             <option value="R">Regular</option>
