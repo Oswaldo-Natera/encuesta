@@ -2,6 +2,9 @@
 session_start();
 error_reporting(0);
 $sesion = $_SESSION["usuario"];
+if ($_SESSION["resp2"]== null){
+    $_SESSION["resp2"] = $_POST["preg2"]; 
+}
 
 if ($sesion == NULL || $sesion == "") {
     echo "Usted no tiene autorización";
@@ -35,6 +38,7 @@ if ($sesion == NULL || $sesion == "") {
             <option value="M">Malo</option>
             <option value="P">Pesimo</option>
         </select>
+        <br>
         <br>
         <input type="submit" value="Siguiente >" onclick="this.form.action='pregunta2.php'">
     </form>

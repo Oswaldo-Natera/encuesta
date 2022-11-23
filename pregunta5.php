@@ -2,7 +2,9 @@
 session_start();
 error_reporting(0);
 $sesion = $_SESSION["usuario"];
-$_SESSION["resp4"] = $_POST["preg4"]; 
+if ($_SESSION["resp4"]== null){
+    $_SESSION["resp4"] = $_POST["preg4"]; 
+}
 
 
 if ($sesion == NULL || $sesion == "") {
@@ -43,6 +45,7 @@ if ($sesion == NULL || $sesion == "") {
     </form>
     <?php
         include("footer.php");
+        $_SESSION["resp5"] = $_POST["preg5"]; 
     ?>   
 </body>
 </html>

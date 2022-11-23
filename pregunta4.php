@@ -2,7 +2,13 @@
 session_start();
 error_reporting(0);
 $sesion = $_SESSION["usuario"];
-$_SESSION["resp3"] = $_POST["preg3"]; 
+if ($_SESSION["resp3"]== null){
+    $_SESSION["resp3"] = $_POST["preg3"]; 
+}
+if ($_SESSION["resp5"]== null){
+    $_SESSION["resp5"] = $_POST["preg5"]; 
+}
+
 
 if ($sesion == NULL || $sesion == "") {
     echo "Usted no tiene autorización";
@@ -42,6 +48,7 @@ if ($sesion == NULL || $sesion == "") {
     </form>
     <?php
         include("footer.php");
+        $_SESSION["resp4"] = $_POST["preg4"]; 
     ?>   
 </body>
 </html>
