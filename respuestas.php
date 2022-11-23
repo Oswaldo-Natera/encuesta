@@ -15,6 +15,11 @@ if ($sesion == NULL || $sesion == "") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EPC</title>
+    <style>
+        body{
+            background-color: #E5E7E9;
+        }
+    </style>
 </head>
 <body>
     <h1>Encuesta de percepcion ciudadana</h1>
@@ -41,9 +46,22 @@ if ($sesion == NULL || $sesion == "") {
     <br>
     <p><?php echo $_POST["preg5"] ?></p>
     <br>
+    <?php 
+        $resp = array($_SESSION["resp1"],$_SESSION["resp2"],$_SESSION["resp3"],$_SESSION["resp4"],$_POST["preg5"]);
+        $puntos = array("MB"=>5,"B"=>4,"R"=>3,"M"=>2,"P"=>1);
+        $total = NULL;
+        
+        foreach ($resp as $r) {
+            foreach ($puntos as $key => $value) {
+                if ($r == $key) {
+                    $total += $value;
+                }
+            }
+        }
+    ?>
     <h2>Promedio de la ciudad</h2>
     <br>
-    <p>El promedio de la ciudad es </p>
+    <p>El promedio de la ciudad es <?php echo ($total/5) ?></p>
     <br>
     <script>
         function cerrarSesion(){

@@ -36,6 +36,7 @@ if ($sesion == NULL || $sesion == "") {
             <option value="P">Pesimo</option>
         </select>
         <br>
+        <br>
         <input type="submit" value="Siguiente >" onclick="this.form.action='pregunta2.php'">
     </form>
     <?php
