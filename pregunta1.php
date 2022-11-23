@@ -10,6 +10,7 @@ if ($sesion == NULL || $sesion == "") {
     echo "Usted no tiene autorización";
     die();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
